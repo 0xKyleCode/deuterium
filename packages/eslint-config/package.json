@@ -1,0 +1,12 @@
+{
+    "name": "@deuterium/eslint-config",
+    "version": "0.0.1",
+    "description": "A package to automatically configure eslint.",
+    "author": "kbromma <kbromma@gmail.com>",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "@deuterium/util": "^0.1.5"
+    },
+    "gitHead": "7d33244e7a97370f37b1eb5f059854ccc01904fa"
+}

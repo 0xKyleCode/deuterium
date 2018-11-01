@@ -1,0 +1,65 @@
+{
+    "name": "deuterium",
+    "version": "0.0.2",
+    "description": "Package for full stack development",
+    "author": "Kyle Bromma <kbromma@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "pub": "yarn lint && yarn test && yarn actual-pub",
+        "actual-pub": "lerna publish",
+        "bootstrap": "lerna bootstrap",
+        "lint": "eslint packages --ext .js,.jsx  && flow",
+        "test": "jest --coverage",
+        "test-new": "jest --coverage --changedSince=master"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kbromma/wolf-stack.git"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.1.2",
+        "@babel/core": "^7.1.2",
+        "@babel/node": "^7.0.0",
+        "@babel/plugin-proposal-do-expressions": "^7.0.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+        "@babel/plugin-transform-runtime": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-flow": "^7.0.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/runtime-corejs2": "^7.1.2",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^23.6.0",
+        "babel-plugin-flow-react-proptypes": "^24.1.2",
+        "babel-preset-flow": "^6.23.0",
+        "cross-env": "^5.2.0",
+        "eslint": "^5.6.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-import-resolver-lerna": "^1.0.0",
+        "eslint-plugin-flowtype": "^2.50.3",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-monorepo": "^0.2.1",
+        "eslint-plugin-prettier": "^3.0.0",
+        "eslint-plugin-react": "^7.11.1",
+        "flow-bin": "^0.85.0",
+        "jest": "^23.6.0",
+        "lerna": "^3.4.3",
+        "prettier": "1.14.3"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.1.2",
+        "react": "^16.5.2"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "@deuterium/jest-config",
+    "version": "0.0.1",
+    "description": "Package to pre-config jest for testing.",
+    "author": "kbromma <kbromma@gmail.com>",
+    "license": "MIT",
+    "main": "index.js",
+    "gitHead": "d55a0c40bc3b752478116bf7f3d7cafb50c57ba7"
+}

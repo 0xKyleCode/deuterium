@@ -1,0 +1,14 @@
+{
+    "name": "@deuterium/babel-config",
+    "version": "0.0.1",
+    "author": "Kyle Bromma <kbromma@gmail.com",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "@deuterium/util": "^0.0.1"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.1.0"
+    },
+    "gitHead": "d55a0c40bc3b752478116bf7f3d7cafb50c57ba7"
+}
