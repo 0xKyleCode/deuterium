@@ -1,8 +1,11 @@
 {
-    "name": "@kholin/util",
+    "name": "@deuterium/util",
     "version": "0.0.1",
     "main": "index.js",
     "license": "MIT",
+    "scripts": {
+        "clean": "node ./task.js clean"
+    },
     "dependencies": {
         "app-root-path": "^2.1.0"
     },

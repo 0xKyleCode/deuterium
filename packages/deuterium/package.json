@@ -1,0 +1,17 @@
+{
+    "name": "deuterium",
+    "version": "0.0.1",
+    "description": "A flexible framework for quick implentation any website.",
+    "author": "Kyle Bromma",
+    "license": "MIT",
+    "scripts": {
+        "clean": "node ./task.js clean"
+    },
+    "dependencies": {
+        "@deuterium/babel-config": "^0.0.1",
+        "@deuterium/eslint-config": "^0.0.1",
+        "@deuterium/jest-config": "^0.0.1",
+        "@deuterium/prettier-config": "^0.0.1",
+        "@deuterium/util": "^0.0.1"
+    }
+}

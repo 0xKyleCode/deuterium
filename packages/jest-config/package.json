@@ -5,5 +5,7 @@
     "author": "kbromma <kbromma@gmail.com>",
     "license": "MIT",
     "main": "index.js",
-    "gitHead": "d55a0c40bc3b752478116bf7f3d7cafb50c57ba7"
+    "scripts": {
+        "clean": "node ./task.js clean"
+    }
 }

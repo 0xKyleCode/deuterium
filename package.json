@@ -13,6 +13,7 @@
         "registry": "https://registry.npmjs.org/"
     },
     "scripts": {
+        "clean": "lerna run clean",
         "pub": "yarn lint && yarn test && yarn actual-pub",
         "actual-pub": "lerna publish",
         "bootstrap": "lerna bootstrap",

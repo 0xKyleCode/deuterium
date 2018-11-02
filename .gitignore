@@ -1,11 +1,8 @@
 .DS_Store
-/*.log
 node_modules/
-/coverage/
-/lib/
-/dist/
-/.vscode
-/.env
-/db.sqlite
-/log/*.log
+coverage
+lib
+dist
+.vscode
+.env
 *.log

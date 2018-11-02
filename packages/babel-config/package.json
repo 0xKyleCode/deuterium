@@ -10,5 +10,7 @@
     "devDependencies": {
         "@babel/preset-env": "^7.1.0"
     },
-    "gitHead": "d55a0c40bc3b752478116bf7f3d7cafb50c57ba7"
+    "scripts": {
+        "clean": "node ./task.js clean"
+    }
 }

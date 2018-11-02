@@ -6,7 +6,9 @@
     "license": "MIT",
     "main": "index.js",
     "dependencies": {
-        "@deuterium/util": "^0.1.5"
+        "@deuterium/util": "^0.0.1"
     },
-    "gitHead": "7d33244e7a97370f37b1eb5f059854ccc01904fa"
+    "scripts": {
+        "clean": "node ./task.js clean"
+    }
 }

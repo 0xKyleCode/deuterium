@@ -1,6 +1,6 @@
-# Wolf Stack
+# Deuterium
 
-Wolf stack is a conglomeration of packages to help ease the set up of any experiment. There will be dev configurations using jest, babel, and prettier
+Deuterium is a conglomeration of packages to help ease the set up of any experiment. There will be dev configurations using jest, babel, eslint, and prettier.
 
 # Install
 
