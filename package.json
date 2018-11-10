@@ -14,16 +14,12 @@
     },
     "scripts": {
         "clean": "lerna run clean",
-        "pub": "yarn lint && yarn test && yarn actual-pub",
+        "pub": "yarn clean && yarn lint && yarn test && yarn actual-pub",
         "actual-pub": "lerna publish",
-        "bootstrap": "lerna bootstrap",
         "lint": "eslint packages --ext .js,.jsx  && flow",
         "test": "jest --coverage",
-        "test-new": "jest --coverage --changedSince=master"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kbromma/wolf-stack.git"
+        "test-new": "jest --coverage --changedSince=master",
+        "test-pub": "node ./scripts/publish"
     },
     "devDependencies": {
         "@babel/cli": "^7.1.2",
