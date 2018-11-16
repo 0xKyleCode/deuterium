@@ -1,1 +1,1 @@
-D:/Users/Kyle/Documents/Deuterium/scripts/task.js
+../../scripts/task.js
