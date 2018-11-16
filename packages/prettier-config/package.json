@@ -8,6 +8,10 @@
     "scripts": {
         "clean": "node ./task.js clean"
     },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "devDependencies": {
         "@babel/preset-env": "^7.1.0"
     }

@@ -5,6 +5,10 @@
     "author": "kbromma <kbromma@gmail.com>",
     "license": "MIT",
     "main": "index.js",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "scripts": {
         "clean": "node ./task.js clean"
     }

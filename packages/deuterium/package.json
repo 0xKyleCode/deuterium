@@ -7,6 +7,10 @@
     "scripts": {
         "clean": "node ./task.js clean"
     },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "dependencies": {
         "@deuterium/babel-config": "^0.0.1",
         "@deuterium/eslint-config": "^0.0.1",

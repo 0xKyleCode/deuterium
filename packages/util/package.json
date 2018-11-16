@@ -6,6 +6,10 @@
     "scripts": {
         "clean": "node ./task.js clean"
     },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "dependencies": {
         "app-root-path": "^2.1.0"
     },

@@ -4,6 +4,10 @@
     "author": "Kyle Bromma <kbromma@gmail.com",
     "license": "MIT",
     "main": "index.js",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "dependencies": {
         "@deuterium/util": "^0.0.1"
     },
