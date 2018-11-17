@@ -1,5 +1,5 @@
 {
-    "name": "@deuterium/babel-config",
+    "name": "@deuterium/babel-preset",
     "version": "0.0.1",
     "author": "Kyle Bromma <kbromma@gmail.com",
     "license": "MIT",

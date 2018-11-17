@@ -13,6 +13,7 @@ function addPreset(
     required?: boolean = false,
     options?: Object
 ): Object {
+    // Checks if the package is in our package.json.
     if (checkPackage(file, required)) {
         if (options) {
             config.presets.push([file, options])
@@ -36,6 +37,7 @@ function addPlugin(
     required?: boolean = false,
     options?: Object
 ) {
+    // Checks if the package is in our package.json.
     if (checkPackage(file, required)) {
         if (options) {
             config.plugins.push([file, options])
