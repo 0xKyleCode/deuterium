@@ -6,13 +6,13 @@
 In order to properly work, jest-config requires jest to be installed.
 
 ```bash
-yarn add -dev jest @deuterium/jest-config
+yarn add --dev jest @deuterium/jest-config
 ```
 
 If using `babel`, specifically `babel 7` we need to install a few more dependencies
 
 ```bash
-yarn add -dev babel-jest babel-core@^7.0.0-bridge.0 @babel/core
+yarn add --dev babel-jest babel-core@^7.0.0-bridge.0 @babel/core
 ```
 
 ## Usage
