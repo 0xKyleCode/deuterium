@@ -22,5 +22,7 @@ Create file `jest.config.js` and add
 ``` javascript
 var jestConfig = require('jest-config');
 
-module.exports = jestConfig('mainDir', ['ignoredir1', 'ignoredir2', ...])
+module.exports = [
+...jestConfig('mainDir', ['ignoredir1', 'ignoredir2', ...]),
+]
 ```
