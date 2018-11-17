@@ -1,4 +1,4 @@
-# @deuterium/babel-config
+# @deuterium/babel-preset
 
 This package utilizies **babel 7** and allows compiling of ES2015+ to a backwards compatible ES5 standard.
 
@@ -9,13 +9,13 @@ You will need to install the base babel 7
 ## Main
 
 ```bash
-yarn add --dev @deuterium/babel-config @babel/core @babel/preset-env
+yarn add --dev @deuterium/babel-preset @babel/core @babel/preset-env
 ```
 
-If you want command line usage, you can use it with babel-node by adding
+If you want command line usage, you can use it with `babel-node` and `babel` by adding
 
 ```bash
-yar add --dev @babel/cli
+yar add --dev @babel/cli @babel/node
 ```
 ## Plugins 
 
@@ -38,7 +38,11 @@ yarn add --dev @babel/plugin-transform-runtime @babel/plugin-proposal-pipeline-o
 In your `package.json`, add
 
 ```json
-
+  "babel": {
+    "presets": [
+      "@deuterium"
+    ]
+  }
 ```
 
 
