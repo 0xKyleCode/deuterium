@@ -1,6 +1,4 @@
 // @flow
 import babelConfig from './config'
 
-module.exports = {
-    babelConfig,
-}
+module.exports = () => babelConfig
