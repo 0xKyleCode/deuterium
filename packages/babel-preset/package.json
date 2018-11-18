@@ -19,6 +19,7 @@
     },
     "scripts": {
         "clean": "node ./task.js clean",
-        "build": "node ./task.js build"
+        "build": "node ./task.js build",
+        "pub-build": "node ./task.js build publish"
     }
 }

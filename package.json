@@ -14,11 +14,12 @@
     },
     "scripts": {
         "clean": "lerna run clean",
-        "pub": " yarn lint && yarn test && yarn build && yarn actual-pub && yarn clean",
+        "pub": "yarn lint && yarn test && yarn pub-build && yarn actual-pub && yarn clean",
         "actual-pub": "lerna publish --skip-npm && yarn npm-pub",
-        "lint": "eslint packages --ext .js,.jsx  && flow",
+        "lint": "yarn build && eslint packages --ext .js,.jsx  && flow && yarn clean",
         "test": "yarn build && jest --coverage && yarn clean",
         "build": "lerna run build",
+        "pub-build": "lerna run pub-build",
         "test-new": "yarn build && jest --coverage --changedSince=master && yarn clean",
         "npm-pub": "node ./scripts/publish"
     },
