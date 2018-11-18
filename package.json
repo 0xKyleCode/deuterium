@@ -15,7 +15,7 @@
     "scripts": {
         "clean": "lerna run clean",
         "pub": "yarn lint && yarn test && yarn pub-build && yarn actual-pub && yarn clean",
-        "actual-pub": "lerna publish --skip-npm && yarn npm-pub",
+        "actual-pub": "lerna version && yarn npm-pub",
         "lint": "yarn build && eslint packages --ext .js,.jsx  && flow && yarn clean",
         "test": "yarn build && jest --coverage && yarn clean",
         "build": "lerna run build",
