@@ -6,3 +6,5 @@ dist
 .vscode
 .env
 *.log
+/packages/*/*.flow
+/packages/deuterium/**/*.flow

@@ -14,12 +14,13 @@
     },
     "scripts": {
         "clean": "lerna run clean",
-        "pub": "yarn clean && yarn lint && yarn test && yarn actual-pub",
-        "actual-pub": "lerna publish",
+        "pub": " yarn lint && yarn test && yarn build && yarn actual-pub && yarn clean",
+        "actual-pub": "lerna publish --skip-npm && yarn npm-pub",
         "lint": "eslint packages --ext .js,.jsx  && flow",
-        "test": "jest --coverage",
-        "test-new": "jest --coverage --changedSince=master",
-        "test-pub": "node ./scripts/publish"
+        "test": "yarn build && jest --coverage && yarn clean",
+        "build": "lerna run build",
+        "test-new": "yarn build && jest --coverage --changedSince=master && yarn clean",
+        "npm-pub": "node ./scripts/publish"
     },
     "devDependencies": {
         "@babel/cli": "^7.1.2",
@@ -51,6 +52,7 @@
         "eslint-plugin-prettier": "^3.0.0",
         "eslint-plugin-react": "^7.11.1",
         "flow-bin": "^0.85.0",
+        "flow-copy-source": "^2.0.2",
         "jest": "^23.6.0",
         "lerna": "^3.4.3",
         "prettier": "1.14.3"

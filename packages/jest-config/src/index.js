@@ -1,6 +1,6 @@
 // @flow
 
-import jestConfig from './src/jest-config'
+import jestConfig from './jest-config'
 
 module.exports = {
     jestConfig,

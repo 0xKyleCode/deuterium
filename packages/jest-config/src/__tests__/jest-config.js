@@ -1,5 +1,5 @@
 // @flow
-import jestConfig from '../src/jest-config'
+import jestConfig from '../jest-config'
 
 test('jest-config out puts correct collect coverage', () => {
     const config = jestConfig('packages')

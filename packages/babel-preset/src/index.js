@@ -1,5 +1,5 @@
 // @flow
-import babelConfig from './src/config'
+import babelConfig from './config'
 
 module.exports = {
     babelConfig,

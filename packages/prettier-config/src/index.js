@@ -1,6 +1,6 @@
 // @flow
 
-import prettierConfig from './src/prettier-config'
+import prettierConfig from './prettier-config'
 
 module.exports = {
     prettierConfig,
