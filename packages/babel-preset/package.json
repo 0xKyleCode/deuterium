@@ -1,6 +1,6 @@
 {
     "name": "@deuterium/babel-preset",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "author": "Kyle Bromma <kbromma@gmail.com",
     "license": "MIT",
     "main": "lib/index.js",
@@ -12,7 +12,7 @@
         "registry": "https://registry.npmjs.org/"
     },
     "dependencies": {
-        "@deuterium/util": "^0.0.1"
+        "@deuterium/util": "^1.0.0"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.1.0"

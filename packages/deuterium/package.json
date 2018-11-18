@@ -1,6 +1,6 @@
 {
     "name": "deuterium",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A flexible framework for quick implentation any website.",
     "author": "Kyle Bromma",
     "license": "MIT",
@@ -9,10 +9,10 @@
         "registry": "https://registry.npmjs.org/"
     },
     "dependencies": {
-        "@deuterium/babel-preset": "^0.0.1",
-        "@deuterium/eslint-config": "^0.0.1",
-        "@deuterium/jest-config": "^0.0.1",
-        "@deuterium/prettier-config": "^0.0.1",
-        "@deuterium/util": "^0.0.1"
+        "@deuterium/babel-preset": "^1.0.0",
+        "@deuterium/eslint-config": "^1.0.0",
+        "@deuterium/jest-config": "^1.0.0",
+        "@deuterium/prettier-config": "^1.0.0",
+        "@deuterium/util": "^1.0.0"
     }
 }
