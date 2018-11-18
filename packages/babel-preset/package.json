@@ -1,6 +1,6 @@
 {
     "name": "@deuterium/babel-preset",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Kyle Bromma <kbromma@gmail.com",
     "license": "MIT",
     "main": "lib/index.js",
