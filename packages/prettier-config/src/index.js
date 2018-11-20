@@ -2,6 +2,4 @@
 
 import prettierConfig from './prettier-config'
 
-module.exports = {
-    prettierConfig,
-}
+module.exports = prettierConfig
