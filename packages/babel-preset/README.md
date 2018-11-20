@@ -15,7 +15,7 @@ yarn add --dev @deuterium/babel-preset @babel/core @babel/preset-env
 If you want command line usage, you can use it with `babel-node` and `babel` by adding
 
 ```bash
-yar add --dev @babel/cli @babel/node
+yarm add --dev @babel/cli @babel/node
 ```
 ## Plugins 
 
