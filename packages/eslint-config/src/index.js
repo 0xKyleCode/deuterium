@@ -1,7 +1,5 @@
 // @flow
 
-import eslintConfig from './eslint-config'
+import config from './eslint-config'
 
-module.exports = {
-    eslintConfig,
-}
+module.exports = config
