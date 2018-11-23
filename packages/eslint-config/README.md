@@ -62,9 +62,10 @@ yarn add --dev eslint-plugin-flowtype flow-bin babel-eslint
 #### Using [Prettier](https://github.com/prettier/prettier)
 - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) - Plugin to allow for linting using prettier config
   - [prettier](https://github.com/prettier/prettier) is required.
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Turns off eslint rules that conflict with prettier rules
   
 ```
-yarn add --dev eslint-plugin-prettier prettier
+yarn add --dev eslint-plugin-prettier prettier eslint-config-prettier
 ```
 
 ## Usage
