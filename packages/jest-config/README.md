@@ -22,7 +22,7 @@ Create file `jest.config.js` and add
 ``` javascript
 const jestConfig = require('@deuterium/jest-config');
 
-module.exports = [
-...jestConfig('mainDir', ['ignoredir1', 'ignoredir2', ...]),
-]
+module.exports = {
+...jestConfig('mainDir', ['ignoredir1', 'ignoredir2', ...]?),
+}
 ```
