@@ -7,8 +7,10 @@ prettier-config is an opinionated configuration for prettier.
 Install with yarn:
 
 ```bash
-yarn add prettier @wolf/prettier-config --dev
+yarn add --dev prettier @deuterium/prettier-config 
 ```
+
+For use with eslint, follow [@deuterium/eslint-config](https://github.com/kbromma/deuterium/tree/master/packages/eslint-config) and Ctrl+F prettier.
 
 Create `.prettierrc.js` in your root and add:
 
