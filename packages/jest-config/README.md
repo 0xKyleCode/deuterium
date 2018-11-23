@@ -20,7 +20,7 @@ yarn add --dev babel-jest babel-core@^7.0.0-bridge.0 @babel/core
 Create file `jest.config.js` and add
 
 ``` javascript
-var jestConfig = require('jest-config');
+const jestConfig = require('@deuterium/jest-config');
 
 module.exports = [
 ...jestConfig('mainDir', ['ignoredir1', 'ignoredir2', ...]),
