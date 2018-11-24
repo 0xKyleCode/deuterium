@@ -1,5 +1,5 @@
 // @flow
-
+// flow-disable-next-line
 import { checkPackage } from '@deuterium/util'
 
 const config: Object = {
@@ -14,8 +14,7 @@ const config: Object = {
 }
 
 // Check to see if they have eslint in the first place
-checkPackage('eslint', true)
-
+checkPackage(('eslint': string), (true: boolean))
 /**
  * Set up parser
  */

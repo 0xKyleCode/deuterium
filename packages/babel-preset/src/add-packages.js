@@ -1,4 +1,5 @@
 // @flow
+// flow-disable-next-line
 import { checkPackage } from '@deuterium/util'
 /**
  * @param  {Object} config
