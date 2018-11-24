@@ -1,6 +1,6 @@
 {
     "name": "@deuterium/prettier-config",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Preset configuration for prettier",
     "author": "kbromma <kbromma@gmail.com>",
     "license": "MIT",

@@ -1,6 +1,6 @@
 {
     "name": "@deuterium/eslint-config",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A package to automatically configure eslint.",
     "author": "kbromma <kbromma@gmail.com>",
     "license": "MIT",
