@@ -3,7 +3,7 @@
 import 'dotenv/config'
 import read from 'read-env'
 
-const env = read({ transformKey: false })
+const env: Object = read({ transformKey: false })
 
 env.NODE_ENV = env.NODE_ENV ?? 'development'
 

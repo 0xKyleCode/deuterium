@@ -6,11 +6,14 @@ import { initServer } from '../index'
 let server
 
 beforeAll(() => {
-    server = initServer()
+    const routing = () => {
+        console.log('test')
+    }
+    server = initServer(routing)
 })
 
 afterAll(() => {
-    server.close()
+    if (server) server.close()
 })
 
 describe('Starts server properly', () => {
