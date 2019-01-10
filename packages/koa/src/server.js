@@ -6,7 +6,7 @@
  */
 
 // flow-disable-next-line
-import { checkPackage, appRoot } from '@deuterium/util'
+import { checkPackage, checkFile } from '@deuterium/util'
 // flow-disable-next-line
 import { IN_TEST_ENV, TEST_PORT, PORT, NODE_ENV } from '@deuterium/env'
 
@@ -15,8 +15,8 @@ import colors from 'colors'
 /**
  * Import using the user's installed versions, so they can tinker around rather than relying on this package
  */
-// flow-disable-next-line
-const Koa = checkPackage('koa', true) && require(`${appRoot}/node_modules/koa`) // eslint-disable-line
+const Koa = checkPackage('koa', true) && require(`koa`) // eslint-disable-line global-require
+const Router = checkPackage('koa-router', true) && require(`koa-router`) // eslint-disable-line global-require
 
 /**
  * Initialize important information like port
@@ -33,8 +33,8 @@ type Options = {
 }
 /**
  * Initialize a koa server using `routing` and `options`
- * @param {Function} routing
- * @param {Object} options
+ * @param {Function} routing A function that takes in the koa-router, and sets up all the different routes
+ * @param {Options} options
  */
 const initServer: Function = (routing: Function, options?: Options) => {
     /**
@@ -48,10 +48,47 @@ const initServer: Function = (routing: Function, options?: Options) => {
 
     // Start server
     const app = new Koa()
+    const router = new Router()
 
-    app.use(async ctx => {
-        ctx.body = 'Hello World'
+    // Error handling
+
+    app.use(async (ctx, next) => {
+        try {
+            next()
+        } catch (err) {
+            ctx.status = err.status || 500
+            ctx.redirect('/error')
+            ctx.app.emit('error', err, ctx)
+        }
     })
+
+    // Initialize use of pre-set middleware
+
+    // Security
+    if (checkPackage('koa-helmet')) {
+        const helmet = require('koa-helmet') // eslint-disable-line global-require
+        app.use(helmet())
+    }
+
+    if (checkPackage('koa-sslify')) {
+        const enforceHttps = require('koa-sslify') // eslint-disable-line global-require
+        const usingHeroku = checkFile('Procfile')
+        app.use(enforceHttps({ trustProtoHeader: usingHeroku }))
+    }
+
+    if (checkPackage('@koa/cors')) {
+        const cors = require('@koa/cors') // eslint-disable-line global-require
+        app.use(cors())
+    }
+
+    // Initialize use of all custom middleware
+
+    // koa-morgan
+    // koa-sslify
+
+    // Let Koa use our routes
+    routing(router)
+    app.use(router.routes()).use(router.allowedMethods())
 
     const server = app.listen(options?.port || finalPort)
 
