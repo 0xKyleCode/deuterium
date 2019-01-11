@@ -15,9 +15,12 @@ import colors from 'colors'
 /**
  * Import using the user's installed versions, so they can tinker around rather than relying on this package
  */
+// flow-disable-next-line
 const Koa = checkPackage('koa', true) && require(`${appRoot}/node_modules/koa`) // eslint-disable-line
+
 const Router =
     checkPackage('koa-router', true) &&
+    // flow-disable-next-line
     require(`${appRoot}/node_modules/koa-router`) // eslint-disable-line
 
 /**
@@ -68,17 +71,20 @@ const initServer: Function = (routing: Function, options?: Options) => {
 
     // Security
     if (checkPackage('koa-helmet')) {
+        // flow-disable-next-line
         const helmet = require(`${appRoot}/node_modules/koa-helmet`) // eslint-disable-line
         app.use(helmet())
     }
 
     if (checkPackage('koa-sslify')) {
+        // flow-disable-next-line
         const enforceHttps = require(`${appRoot}/node_modules/koa-sslify`) // eslint-disable-line
         const usingHeroku = checkFile('Procfile')
         app.use(enforceHttps({ trustProtoHeader: usingHeroku }))
     }
 
     if (checkPackage('@koa/cors')) {
+        // flow-disable-next-line
         const cors = require(`${appRoot}/node_modules/@koa/cors`) // eslint-disable-line
         app.use(cors())
     }
