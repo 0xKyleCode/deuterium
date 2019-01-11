@@ -6,7 +6,7 @@
  */
 
 // flow-disable-next-line
-import { checkPackage, checkFile } from '@deuterium/util'
+import { checkPackage, checkFile, appRoot } from '@deuterium/util'
 // flow-disable-next-line
 import { IN_TEST_ENV, TEST_PORT, PORT, NODE_ENV } from '@deuterium/env'
 
@@ -15,8 +15,10 @@ import colors from 'colors'
 /**
  * Import using the user's installed versions, so they can tinker around rather than relying on this package
  */
-const Koa = checkPackage('koa', true) && require(`koa`) // eslint-disable-line global-require
-const Router = checkPackage('koa-router', true) && require(`koa-router`) // eslint-disable-line global-require
+const Koa = checkPackage('koa', true) && require(`${appRoot}/node_modules/koa`) // eslint-disable-line
+const Router =
+    checkPackage('koa-router', true) &&
+    require(`${appRoot}/node_modules/koa-router`) // eslint-disable-line
 
 /**
  * Initialize important information like port
@@ -66,18 +68,18 @@ const initServer: Function = (routing: Function, options?: Options) => {
 
     // Security
     if (checkPackage('koa-helmet')) {
-        const helmet = require('koa-helmet') // eslint-disable-line global-require
+        const helmet = require(`${appRoot}/node_modules/koa-helmet`) // eslint-disable-line
         app.use(helmet())
     }
 
     if (checkPackage('koa-sslify')) {
-        const enforceHttps = require('koa-sslify') // eslint-disable-line global-require
+        const enforceHttps = require(`${appRoot}/node_modules/koa-sslify`) // eslint-disable-line
         const usingHeroku = checkFile('Procfile')
         app.use(enforceHttps({ trustProtoHeader: usingHeroku }))
     }
 
     if (checkPackage('@koa/cors')) {
-        const cors = require('@koa/cors') // eslint-disable-line global-require
+        const cors = require(`${appRoot}/node_modules/@koa/cors`) // eslint-disable-line
         app.use(cors())
     }
 
