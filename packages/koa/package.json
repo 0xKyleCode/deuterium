@@ -1,6 +1,6 @@
 {
     "name": "@deuterium/koa",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Preset configuration for koa",
     "author": "kbromma <kbromma@gmail.com>",
     "license": "MIT",
