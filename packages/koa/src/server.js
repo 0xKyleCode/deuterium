@@ -28,10 +28,10 @@ const Router =
  */
 
 const defaultTestPort: number = TEST_PORT || 8000
-const deafaultPort: number = PORT || 8001
-const finalPort: number = IN_TEST_ENV ? defaultTestPort : deafaultPort
+const defaultPort: number = PORT || 8001
+const finalPort: number = IN_TEST_ENV ? defaultTestPort : defaultPort
 
-const pre = colors.green('[koa]')
+const pre = colors.green('[deuterium/koa]')
 type Options = {
     silent: boolean,
     port: number,
