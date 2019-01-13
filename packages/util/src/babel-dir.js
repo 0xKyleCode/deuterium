@@ -7,9 +7,9 @@ import path from 'path'
 
 async function transformFile(
     file: any,
-    src: any,
-    dest: any,
-    options: any = {}
+    src: string,
+    dest: string,
+    options?: Object = {}
 ) {
     const filepath = path.join(src, file)
     const content = await fs.readFile(filepath)
@@ -19,7 +19,7 @@ async function transformFile(
     return fs.outputFile(destpath, code.code)
 }
 
-export default (src: string, dest: string, options: object) => {
+export default (src: string, dest: string, options?: Object) => {
     function t(file) {
         return transformFile(file, src, dest, options)
     }

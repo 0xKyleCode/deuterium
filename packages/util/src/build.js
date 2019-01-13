@@ -25,17 +25,18 @@ export const removeDir = (dir: string) => {
 export const babelifyDir = async (
     src: string,
     dest: string,
-    options?: object
+    options?: Object
 ) => {
     await babelDir(src, dest, options)
     console.log(`${pre} Babelified ${src} into ${dest}.`)
 }
 
-export const initWebpack = (config: object) => {
+export const initWebpack = (config: Object) => {
     // Requires webpack and @babel/polyfill
-    const webpack =
-        checkPackage('webpack', true) &&
-        require(`${appRoot}/node_modules/webpack`) // eslint-disable-line
+    checkPackage('webpack', true)
+
+    // flow-disable-next-line
+    const webpack = require(`${appRoot}/node_modules/webpack`) // eslint-disable-line
 
     checkPackage('@babel/polyfill', true)
 
@@ -51,8 +52,8 @@ export const initWebpack = (config: object) => {
 export const build = (
     src: string,
     lib: string,
-    babelOptions?: object,
-    webpackConfig: object
+    babelOptions?: Object,
+    webpackConfig: Object
 ) => {
     console.log(`${pre} Starting build.`)
     removeDir(lib)
