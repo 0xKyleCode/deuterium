@@ -44,10 +44,13 @@ export const initWebpack = (config: Object) => {
         if (err) {
             console.error(err.stack || err)
             if (err.details) console.error(`${pre} ${err.details}`)
-            if (stats.hasErrors()) console.error(stats.toJson().errors)
-            if (stats.hasWarnings()) console.warn(stats.toJson().warnings)
-            process.exit(2)
+            return
         }
+        if (stats.hasErrors()) {
+            console.error(stats.toJson().errors)
+            return
+        }
+        if (stats.hasWarnings()) console.warn(stats.toJson().warnings)
         console.log(`${pre} Webpack created.`)
     })
 }
