@@ -19,7 +19,7 @@ function jestConfig(
 
     const config = {
         collectCoverage: true,
-        collectCoverageFrom: [coverageMain, ...coverageIgnore],
+        collectCoverageFrom: [coverageMain, ...coverageIgnoreArray],
         roots: [rootFiles],
         testEnvironment: 'node',
         testPathIgnorePatterns: testIgnore,
