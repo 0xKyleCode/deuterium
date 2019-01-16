@@ -41,9 +41,10 @@ export const initWebpack = (config: Object) => {
     checkPackage('@babel/polyfill', true)
 
     webpack(config, (err, stats) => {
-        if (err || stats.hasErrors()) {
-            console.log(`${pre} ${err}`)
-            console.log(stats)
+        if (err || err.stack) {
+            if (err.details) console.error(`${pre} ${err}`)
+            if (stats.hasErrors()) console.error(stats.toJson().errors)
+            if (stats.hasWarnings()) console.warn(stats.toJson().warnings)
             process.exit(2)
         }
         console.log(`${pre} Webpack created.`)
