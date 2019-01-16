@@ -12,7 +12,7 @@ beforeAll(() => {
 })
 
 afterAll(() => {
-    fs.rmdirSync(lib)
+    fs.removeSync(lib)
 })
 
 describe('Testing build', () => {
