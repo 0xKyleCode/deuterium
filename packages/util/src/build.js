@@ -25,7 +25,7 @@ export const removeDir = (dir: string) => {
 export const babelifyDir = async (
     src: string,
     dest: string,
-    options?: Object
+    options: Object
 ) => {
     await babelDir(src, dest, options)
     console.log(`${pre} Babelified ${src} into ${dest}.`)
@@ -52,7 +52,7 @@ export const initWebpack = (config: Object) => {
 export const build = (
     src: string,
     lib: string,
-    babelOptions?: Object,
+    babelOptions: Object,
     webpackConfig: Object
 ) => {
     console.log(`${pre} Starting build.`)
