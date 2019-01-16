@@ -10,8 +10,10 @@
     },
     "dependencies": {
         "@deuterium/babel-preset": "^1.2.4",
+        "@deuterium/env": "^1.2.1",
         "@deuterium/eslint-config": "^1.2.4",
         "@deuterium/jest-config": "^1.0.4",
+        "@deuterium/koa": "^1.2.4",
         "@deuterium/prettier-config": "^1.0.4",
         "@deuterium/util": "^1.2.4"
     }
