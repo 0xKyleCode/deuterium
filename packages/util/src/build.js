@@ -43,6 +43,7 @@ export const initWebpack = (config: Object) => {
     webpack(config, (err, stats) => {
         if (err || stats.hasErrors()) {
             console.log(`${pre} ${err}`)
+            console.log(stats)
             process.exit(2)
         }
         console.log(`${pre} Webpack created.`)
