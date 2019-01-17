@@ -11,7 +11,17 @@ beforeAll(() => {
             ctx.body = 'Hello World'
         })
     }
-    server = initServer(routing)
+
+    const addOns = [
+        {
+            name: 'koa-helmet',
+            func: (app, helmet) => {
+                app.use(helmet())
+            },
+        },
+    ]
+
+    server = initServer(routing, addOns)
 })
 
 afterAll(() => {

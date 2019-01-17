@@ -3,6 +3,7 @@
 import all from '../index'
 import checkPackage from '../checkPackage'
 import appRoot from '../root'
+import checkFile from '../checkFile'
 import { removeDir, babelifyDir, build, initWebpack } from '../build'
 
 test('index.js has all exports', () => {
@@ -13,5 +14,6 @@ test('index.js has all exports', () => {
         babelifyDir,
         build,
         initWebpack,
+        checkFile,
     })
 })

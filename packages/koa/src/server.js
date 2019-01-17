@@ -6,7 +6,7 @@
  */
 
 // flow-disable-next-line
-import { checkPackage, checkFile, appRoot } from '@deuterium/util'
+import { checkPackage, appRoot } from '@deuterium/util'
 // flow-disable-next-line
 import { IN_TEST_ENV, TEST_PORT, PORT, NODE_ENV } from '@deuterium/env'
 
@@ -36,12 +36,23 @@ type Options = {
     silent: boolean,
     port: number,
 }
+
+type KoaPackage = {
+    name: string,
+    func: (app: any, required: any) => void,
+}
+
 /**
  * Initialize a koa server using `routing` and `options`
  * @param {Function} routing A function that takes in the koa-router, and sets up all the different routes
+ * @param {Array<KoaPackage>} extraPackages Extra add ons
  * @param {Options} options
  */
-const initServer: Function = (routing: Function, options?: Options) => {
+const initServer: Function = (
+    routing: Function,
+    extraPackages?: Array<KoaPackage>,
+    options?: Options
+) => {
     /**
      * Intro to server intialization
      */
@@ -68,14 +79,15 @@ const initServer: Function = (routing: Function, options?: Options) => {
     })
 
     // Initialize use of pre-set middleware
-
-    // Security
-    if (checkPackage('koa-helmet')) {
-        // flow-disable-next-line
-        const helmet = require(`${appRoot}/node_modules/koa-helmet`) // eslint-disable-line
-        app.use(helmet())
+    if (extraPackages) {
+        extraPackages.forEach((pack: KoaPackage) => {
+            // flow-disable-next-line
+            const required = require(`${appRoot}/node_modules/${pack.name}`) //eslint-disable-line
+            pack.func(app, required)
+        })
     }
 
+    /*
     if (checkPackage('koa-sslify')) {
         // flow-disable-next-line
         const enforceHttps = require(`${appRoot}/node_modules/koa-sslify`) // eslint-disable-line
@@ -88,11 +100,9 @@ const initServer: Function = (routing: Function, options?: Options) => {
         const cors = require(`${appRoot}/node_modules/@koa/cors`) // eslint-disable-line
         app.use(cors())
     }
+    */
 
     // Initialize use of all custom middleware
-
-    // koa-morgan
-    // koa-sslify
 
     // Let Koa use our routes
     routing(router)
