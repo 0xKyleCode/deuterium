@@ -40,10 +40,10 @@ const finalPort: number = IN_TEST_ENV ? defaultTestPort : defaultPort
 
 const pre = colors.green('[deuterium/koa]')
 type Options = {
-    silent?: boolean,
-    port?: number,
-    cert?: any,
-    key?: any,
+    silent: boolean,
+    port: number,
+    cert: string,
+    key: string,
 }
 
 type KoaPackage = {
@@ -68,7 +68,7 @@ const initServer: Function = (
 
     if (!routing) throw Error(colors.red('Must include a routing function'))
 
-    if (!options?.silent || IN_TEST_ENV)
+    if ((options && !options.silent) || IN_TEST_ENV)
         console.log(`${pre} Initializing server. `)
 
     // Start server
@@ -105,7 +105,7 @@ const initServer: Function = (
 
     let server: Server
     // Test if using https and in dev
-    if (options?.cert && options?.key && IN_DEV_ENV) {
+    if (options && options.cert && options.key && IN_DEV_ENV) {
         const serverOptions = {
             key: fs.readFileSync(options.key),
             cert: fs.readFileSync(options.cert),
