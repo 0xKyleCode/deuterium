@@ -8,9 +8,16 @@
 // flow-disable-next-line
 import { checkPackage, appRoot } from '@deuterium/util'
 // flow-disable-next-line
-import { IN_TEST_ENV, TEST_PORT, PORT, NODE_ENV } from '@deuterium/env'
-
+import {
+    IN_TEST_ENV,
+    TEST_PORT,
+    PORT,
+    NODE_ENV,
+    IN_DEV_ENV,
+} from '@deuterium/env'
+import fs from 'fs'
 import colors from 'colors'
+import https, { Server } from 'https'
 
 /**
  * Import using the user's installed versions, so they can tinker around rather than relying on this package
@@ -33,8 +40,10 @@ const finalPort: number = IN_TEST_ENV ? defaultTestPort : defaultPort
 
 const pre = colors.green('[deuterium/koa]')
 type Options = {
-    silent: boolean,
-    port: number,
+    silent?: boolean,
+    port?: number,
+    cert?: any,
+    key?: any,
 }
 
 type KoaPackage = {
@@ -81,26 +90,12 @@ const initServer: Function = (
     // Initialize use of pre-set middleware
     if (extraPackages) {
         extraPackages.forEach((pack: KoaPackage) => {
+            checkPackage(pack.name, true)
             // flow-disable-next-line
             const required = require(`${appRoot}/node_modules/${pack.name}`) //eslint-disable-line
             pack.func(app, required)
         })
     }
-
-    /*
-    if (checkPackage('koa-sslify')) {
-        // flow-disable-next-line
-        const enforceHttps = require(`${appRoot}/node_modules/koa-sslify`) // eslint-disable-line
-        const usingHeroku = checkFile('Procfile')
-        app.use(enforceHttps({ trustProtoHeader: usingHeroku }))
-    }
-
-    if (checkPackage('@koa/cors')) {
-        // flow-disable-next-line
-        const cors = require(`${appRoot}/node_modules/@koa/cors`) // eslint-disable-line
-        app.use(cors())
-    }
-    */
 
     // Initialize use of all custom middleware
 
@@ -108,7 +103,20 @@ const initServer: Function = (
     routing(router)
     app.use(router.routes()).use(router.allowedMethods())
 
-    const server = app.listen(options?.port || finalPort)
+    let server: Server
+    // Test if using https and in dev
+    if (options?.cert && options?.key && IN_DEV_ENV) {
+        const serverOptions = {
+            key: fs.readFileSync(options.key),
+            cert: fs.readFileSync(options.cert),
+        }
+        // Creates the server using https, otherwise create server with http
+        server = https
+            .createServer(serverOptions, app.callback())
+            .listen(options?.port || finalPort)
+    } else {
+        server = app.listen(options?.port || finalPort)
+    }
 
     if (!options?.silent || IN_TEST_ENV)
         console.log(

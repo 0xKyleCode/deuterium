@@ -4,7 +4,7 @@ A package for quickstarting a koa server. Easy enough to start with one function
 
 # Install
 
-yarn add koa koa-router @deuterium/koa
+`yarn add koa koa-router @deuterium/koa`
 
 # Starting Up
 
