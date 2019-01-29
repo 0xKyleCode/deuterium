@@ -5385,6 +5385,11 @@ koa-sslify@^2.2.0:
   resolved "https://registry.yarnpkg.com/koa-sslify/-/koa-sslify-2.2.0.tgz#61307318b66a757b3c73534f0b81b35b10fc36c1"
   integrity sha512-ElWDuEW5cUhs710i9srvwiUuMg3cgY5WPQHpulYVk0qAwuxn9vLLZEDJ+Gc9hPhNWPxVsr1kIb1EbR09fSJ2Xg==
 
+koa-sslify@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/koa-sslify/-/koa-sslify-4.0.3.tgz#79ec31042a607d0c4c0a32e21cea513708840c1c"
+  integrity sha512-5RwsRc+Zkawoq9ev5pNAPP8r+wj4Eqo3b7IfSXrpYISBDNo0fwrMcYMioR+B00piV9NpXqPZA4gh36SpIeZSvw==
+
 koa@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/koa/-/koa-2.6.2.tgz#57ba4d049b0a99cae0d594e6144e2931949a7ce1"

@@ -8,3 +8,5 @@ dist
 *.log
 /packages/*/*.flow
 /packages/deuterium/**/*.flow
+*.key
+*.crt

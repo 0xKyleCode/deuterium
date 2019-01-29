@@ -14,6 +14,7 @@ import {
     PORT,
     NODE_ENV,
     IN_DEV_ENV,
+    // flow-disable-next-line
 } from '@deuterium/env'
 import fs from 'fs'
 import colors from 'colors'
@@ -47,8 +48,7 @@ type Options = {
 }
 
 type KoaPackage = {
-    name: string,
-    func: (app: any, required: any) => void,
+    func: (app: any) => void,
 }
 
 /**
@@ -79,7 +79,7 @@ const initServer: Function = (
 
     app.use(async (ctx, next) => {
         try {
-            next()
+            await next()
         } catch (err) {
             ctx.status = err.status || 500
             ctx.redirect('/error')
@@ -90,10 +90,7 @@ const initServer: Function = (
     // Initialize use of pre-set middleware
     if (extraPackages) {
         extraPackages.forEach((pack: KoaPackage) => {
-            checkPackage(pack.name, true)
-            // flow-disable-next-line
-            const required = require(`${appRoot}/node_modules/${pack.name}`) //eslint-disable-line
-            pack.func(app, required)
+            pack.func(app)
         })
     }
 

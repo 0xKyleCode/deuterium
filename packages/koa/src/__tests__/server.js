@@ -1,6 +1,9 @@
 // @flow
 
 import request from 'supertest'
+import helmet from 'koa-helmet'
+// flow-disable-next-line
+import { appRoot } from '@deuterium/util'
 import { initServer } from '../index'
 
 let server
@@ -14,14 +17,17 @@ beforeAll(() => {
 
     const addOns = [
         {
-            name: 'koa-helmet',
-            func: (app, helmet) => {
+            func: app => {
                 app.use(helmet())
             },
         },
     ]
+    const options = {
+        key: `${appRoot}/server.key`,
+        cert: `${appRoot}/server.crt`,
+    }
 
-    server = initServer(routing, addOns)
+    server = initServer(routing, addOns, options)
 })
 
 afterAll(() => {
