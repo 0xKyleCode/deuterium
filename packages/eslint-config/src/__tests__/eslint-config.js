@@ -21,12 +21,7 @@ test('eslint-config extends is correct output', () => {
 
 test('eslint-config plugins is correct output', () => {
     const config = eslintConfig
-    expect(config.plugins).toEqual(['flowtype', 'prettier'])
-})
-
-test('eslint-config plugins is correct output', () => {
-    const config = eslintConfig
-    expect(config.plugins).toEqual(['flowtype', 'prettier'])
+    expect(config.plugins).toEqual(['flowtype', 'react-hooks', 'prettier'])
 })
 
 test('eslint-config env to be correct output', () => {
@@ -40,5 +35,6 @@ test('eslint-config rules to be correct output', () => {
         semi: [2, 'never'],
         'no-unexpected-multiline': 2,
         'linebreak-style': 0,
+        'react-hooks/rules-of-hooks': 'error',
     })
 })

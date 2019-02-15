@@ -89,8 +89,16 @@ if (checkPackage('eslint-config-prettier')) {
     }
 }
 
-// Set up eslint-plugin-prettier and dependencies
+if (checkPackage('eslint-plugin-react-hooks')) {
+    config.plugins.push('react-hooks')
+    config.rules = {
+        ...config.rules,
+        'react-hooks/rules-of-hooks': 'error',
+    }
+}
+
 if (checkPackage('eslint-plugin-prettier')) {
+    // Set up eslint-plugin-prettier and dependencies
     config.plugins.push('prettier')
 
     if (!checkPackage('prettier')) {

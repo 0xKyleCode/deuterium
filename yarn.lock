@@ -3164,6 +3164,11 @@ eslint-plugin-prettier@^3.0.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+eslint-plugin-react-hooks@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.0.2.tgz#89d9ab0690a45956696e652368a952fb09f7134d"
+  integrity sha512-pY1RSD3CGkGOV+e+rzjfs+JXKRum7VlJKPHznhU0GnFWfDm6zKLmOmg/lKcwNRH3LTSnF2PbfF8x3w90tyHlYw==
+
 eslint-plugin-react@^7.12.3:
   version "7.12.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.12.3.tgz#b9ca4cd7cd3f5d927db418a1950366a12d4568fd"
@@ -5379,11 +5384,6 @@ koa-router@^7.4.0:
     methods "^1.0.1"
     path-to-regexp "^1.1.1"
     urijs "^1.19.0"
-
-koa-sslify@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/koa-sslify/-/koa-sslify-2.2.0.tgz#61307318b66a757b3c73534f0b81b35b10fc36c1"
-  integrity sha512-ElWDuEW5cUhs710i9srvwiUuMg3cgY5WPQHpulYVk0qAwuxn9vLLZEDJ+Gc9hPhNWPxVsr1kIb1EbR09fSJ2Xg==
 
 koa-sslify@^4.0.3:
   version "4.0.3"
