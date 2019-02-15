@@ -35,8 +35,8 @@ const Router =
  * Initialize important information like port
  */
 
-const defaultTestPort: number = TEST_PORT || 8000
-const defaultPort: number = PORT || 8001
+const defaultTestPort: number = TEST_PORT || 8020
+const defaultPort: number = PORT || 8000
 const finalPort: number = IN_TEST_ENV ? defaultTestPort : defaultPort
 
 const pre = colors.green('[deuterium/koa]')
